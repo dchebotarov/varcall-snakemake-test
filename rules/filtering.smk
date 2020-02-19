@@ -14,7 +14,7 @@ rule select_calls:
     log:
         "logs/gatk/selectvariants/{vartype}.log"
     wrapper:
-        "0.27.1/bio/gatk/selectvariants"
+        "0.49.0/bio/gatk/selectvariants"
 
 
 def get_filter(wildcards):
@@ -34,7 +34,7 @@ rule hard_filter_calls:
     log:
         "logs/gatk/variantfiltration/{vartype}.log"
     wrapper:
-        "0.27.1/bio/gatk/variantfiltration"
+        "0.49.0/bio/gatk/variantfiltration"
 
 
 rule recalibrate_calls:
@@ -47,12 +47,12 @@ rule recalibrate_calls:
     log:
         "logs/gatk/variantrecalibrator/{vartype}.log"
     wrapper:
-        "0.27.1/bio/gatk/variantrecalibrator"
+        "0.49.0/bio/gatk/variantrecalibrator"
 
 
 rule merge_calls:
     input:
-        vcf=expand("filtered/all.{vartype}.{filtertype}.vcf.gz",
+        vcfs=expand("filtered/all.{vartype}.{filtertype}.vcf.gz",
                    vartype=["snvs", "indels"],
                    filtertype="recalibrated"
                               if config["filtering"]["vqsr"]
@@ -62,4 +62,4 @@ rule merge_calls:
     log:
         "logs/picard/merge-filtered.log"
     wrapper:
-        "0.27.1/bio/picard/mergevcfs"
+        "0.49.0/bio/picard/mergevcfs"
