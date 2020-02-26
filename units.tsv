@@ -1,4 +1,7 @@
 sample	unit	platform	fq1	fq2
-A	1	ILLUMINA	data/reads/a.chr21.1.fq	data/reads/a.chr21.2.fq
-B	1	ILLUMINA	data/reads/b.chr21.1.fq	data/reads/b.chr21.2.fq
-B	2	ILLUMINA	data/reads/b.chr21.1.fq	
+A	1	ILLUMINA	data/fastq/rg-1_1.fq.gz	data/fastq/rg-1_2.fq.gz
+A	2	ILLUMINA	data/fastq/rg-2_1.fq.gz	data/fastq/rg-2_2.fq.gz
+A	3	ILLUMINA	data/fastq/rg-3_1.fq.gz	data/fastq/rg-3_2.fq.gz
+A	4	ILLUMINA	data/fastq/rg-4_1.fq.gz	data/fastq/rg-4_2.fq.gz
+A	5	ILLUMINA	data/fastq/rg-5_1.fq.gz	data/fastq/rg-5_2.fq.gz
+A	6	ILLUMINA	data/fastq/rg-6_1.fq.gz	data/fastq/rg-6_2.fq.gz
